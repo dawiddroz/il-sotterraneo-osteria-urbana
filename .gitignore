@@ -30,3 +30,4 @@ PROMPT.md
 *.hermes-tmp.*
 qa-*
 deploy.sh
+public/__astro_font_generated__/
