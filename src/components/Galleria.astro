@@ -1,0 +1,32 @@
+---
+const images = [
+  { src: "/images/piatto-3.jpg", fallback: "https://images.unsplash.com/photo-1608219992759-8d74ed8d76eb?w=900&q=85&auto=format&fit=crop", alt: "Carbonara del Sotterraneo", tall: false },
+  { src: "/images/vino-1.jpg", fallback: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=900&q=85&auto=format&fit=crop", alt: "Calici di vino dei Castelli", tall: true },
+  { src: "/images/piatto-1.jpg", fallback: "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=900&q=85&auto=format&fit=crop", alt: "Pasta fatta in casa", tall: false },
+  { src: "/images/piatto-4.jpg", fallback: "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=900&q=85&auto=format&fit=crop", alt: "Primo piatto dell'osteria", tall: false },
+  { src: "/images/vino-2.jpg", fallback: "https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=900&q=85&auto=format&fit=crop", alt: "Le bottiglie della cantina", tall: false },
+  { src: "/images/carne.jpg", fallback: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=900&q=85&auto=format&fit=crop", alt: "Secondo dalla brace", tall: false },
+  { src: "/images/piatto-5.jpg", fallback: "https://images.unsplash.com/photo-1506354666786-959d6d497f1a?w=900&q=85&auto=format&fit=crop", alt: "Pasta al sugo", tall: true },
+  { src: "/images/piatto-6.jpg", fallback: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=900&q=85&auto=format&fit=crop", alt: "Insalata fresca", tall: false },
+  { src: "/images/piatto-2.jpg", fallback: "https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=900&q=85&auto=format&fit=crop", alt: "Antipasto della casa", tall: false },
+];
+---
+
+<section class="section" id="galleria">
+  <div class="sparkles" aria-hidden="true"><span class="sparkle">✦</span><span class="sparkle">✦</span><span class="sparkle">✦</span><span class="sparkle">✦</span><span class="sparkle">✦</span></div>
+  <div class="container">
+    <span class="section__label el-in">La tavola</span>
+    <h2 class="section__title">Quello che trovi <em>giù per le scale</em></h2>
+    <p class="section__text" style="margin-bottom:48px">
+      Pochi scatti, veri: il Sotterraneo si vive, non si fotografa. Questi sono solo un assaggio.
+    </p>
+    <div class="gallery__grid">
+      {images.map((img, i) => (
+        <figure class={"gallery__item reveal" + (img.tall ? " gallery__item--tall" : "")}>
+          <img src={img.src} onerror={`this.src='${img.fallback}'`} alt={img.alt} loading="lazy" />
+          <figcaption class="gallery__cap">{img.alt}</figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>

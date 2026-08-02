@@ -1,0 +1,78 @@
+---
+const waUrl = "https://wa.me/390685350920?text=Ciao%20Dino%2C%20vorrei%20prenotare%20un%20tavolo%20al%20Sotterraneo!";
+const menuData = {
+  antipasti: {
+    note: "Per iniziare, come si deve",
+    items: [
+      { name: "Fritti dell'oste", desc: "Olive ascolane, supplì e fiori di zucca", price: "9" },
+      { name: "Tagliere della casa", desc: "Salumi dei Castelli, formaggi stagionati, miele e mostarda", price: "14" },
+      { name: "Burrata e pomodorini confit", desc: "Pesto di basilico e riduzione di balsamico", price: "12" },
+    ],
+  },
+  primi: {
+    note: "La pasta fatta come si deve",
+    items: [
+      { name: "Tonnarelli cacio e pepe", desc: "La nostra versione, cremosa e senza compromessi", price: "11" },
+      { name: "Carbonara del Sotterraneo", desc: "Guanciale croccante, pecorino romano DOP", price: "12" },
+      { name: "Amatriciana", desc: "Con pomodoro San Marzano e pecorino", price: "11" },
+      { name: "Gnocchi al ragù di manzo", desc: "Lunghi 12 ore di cottura, come una volta", price: "12" },
+    ],
+  },
+  secondi: {
+    note: "Dal forno e dalla brace",
+    items: [
+      { name: "Coda alla vaccinara", desc: "Ricetta romana tradizionale, 6 ore di fuoco", price: "15" },
+      { name: "Saltimbocca alla romana", desc: "Vitella, prosciutto e salvia, burro e vino bianco", price: "14" },
+      { name: "Tagliata di manzo", desc: "Rucola, grana e riduzione al Barolo", price: "17" },
+    ],
+  },
+  dolci: {
+    note: "Il finale",
+    items: [
+      { name: "Tiramisù della casa", desc: "La ricetta di famiglia di Dino", price: "6" },
+      { name: "Crostata di ricotta", desc: "Con visciole dei Castelli", price: "6" },
+    ],
+  },
+};
+const cols = [
+  { title: "Antipasti", key: "antipasti" },
+  { title: "Primi", key: "primi" },
+  { title: "Secondi", key: "secondi" },
+  { title: "Dolci", key: "dolci" },
+];
+---
+
+<section class="section section--dark" id="menu">
+  <div class="embers" aria-hidden="true"><span class="ember"></span><span class="ember"></span><span class="ember"></span><span class="ember"></span><span class="ember"></span><span class="ember"></span><span class="ember"></span><span class="ember"></span></div>
+  <div class="container">
+    <div class="menu__intro">
+      <span class="section__label el-in">La cantina</span>
+      <h2 class="section__title split-words">Il menu, <em>scritto col cuore</em></h2>
+      <p class="section__text">
+        Cucina casareccia con twist creativo: i piatti cambiano con le stagioni e con
+        quello che il mercato offre. Questa è la carta di casa.
+      </p>
+    </div>
+    <div class="menu__grid">
+      {cols.map((col) => (
+        <div class="menu__col reveal">
+          <h3>{col.title}</h3>
+          <p class="menu__cat-note">{menuData[col.key].note}</p>
+          {menuData[col.key].items.map((item) => (
+            <div class="menu__item">
+              <div class="menu__item-row">
+                <span class="menu__item-name">{item.name}</span>
+                <span class="menu__price">{item.price}€</span>
+              </div>
+              <p class="menu__item-desc">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+    <div class="menu__foot reveal">
+      <span>Fascia media: <b>20–30€ a persona</b> · menù aggiornato alle stagioni</span>
+      <a href={waUrl} class="btn btn--light" target="_blank" rel="noopener">Chiedici il menu del giorno</a>
+    </div>
+  </div>
+</section>

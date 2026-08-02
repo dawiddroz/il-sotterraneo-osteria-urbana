@@ -1,0 +1,19 @@
+{
+  "name": "il-sotterraneo-osteria-urbana",
+  "type": "module",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build; cp -r public/__astro_font_generated__ dist/__astro_font_generated__ 2>/dev/null; exit 0",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^7.1.6",
+    "astro-font": "^1.1.0",
+    "lenis": "^1.3.25"
+  }
+}
