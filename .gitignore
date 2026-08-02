@@ -1,0 +1,33 @@
+# build output
+dist/
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/
+
+# dati interni del lead (MAI sul repo pubblico)
+_lead-data/
+CONCEPT.md
+PROMPT.md
+*.hermes-tmp.*
+qa-*
+deploy.sh
+public/__astro_font_generated__/
